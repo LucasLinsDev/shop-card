@@ -75,7 +75,7 @@ export function Card(props:CardProps){
         <h3>{title?.slice(0,96)}</h3>
         <h5>R$ {oldprice}</h5>
         <h4>R$ {price}</h4>
-        <p>em até <span>10x de R$ ${parcelado} sem</span> juros</p>
+        <p>em até <span>10x de R$ {parcelado} sem</span> juros</p>
 
       </div>
         {buttonAdd ? (
