@@ -1,25 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Card } from "./components/Card";
+import { CardContextProvider } from "./context/card-context";
+import { products } from "./assets/data/products";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CardContextProvider>
+          <div className="App grid">
+             {products.map((props)=>(
+                <Card id={props.id} key={props.id} title={props.title} oldprice={props.oldprice} price={props.price} parcelado={props.parcelado} img={props.img}/>
+             ))}           
+          </div>
+    </CardContextProvider>
   );
 }
 
